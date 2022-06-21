@@ -35,7 +35,8 @@ do
         id=$(basename $d)
         n=`printf '%03d' "$i"`
         nf=$id-$n.tif
-        mv $f ./out_tiff/$nf
+        filename="${nf%.*}"
+        mv $f ./out_tiff/$filename
     done
 done
 

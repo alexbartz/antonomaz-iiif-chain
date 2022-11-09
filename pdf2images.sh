@@ -19,8 +19,9 @@ for d in *
 do
     cd $d
     mkdir -p trash
-    rm $d-000.tif
-    mv `\ls -l *.tif |awk '{ if(!($5 >1000000 && $5<5000000 )) print $9 }'` trash/
+    #rm $d-000.tif
+    find . -name "*.tif" -type f -size -1250k -delete
+    #mv `\ls -l *.tif |awk '{ if(!($5 >1000000 && $5<5000000 )) print $9 }'` trash/
     cd ..
 done
 cd ..
